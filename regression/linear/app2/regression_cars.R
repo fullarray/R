@@ -85,8 +85,8 @@ Error in is.data.frame(x) : object 'actuals_preds' not found
 20      26  37.769100
 26      54  42.085287
 31      50  50.717663
->
->
+
+
 > min_max_accuracy <- mean(apply(axtuals_preds, 1, min) / apply(actuals_preds,$
 Error in apply(actuals_preds, 1, max) : object 'actuals_preds' not found
 > min_max_accuracy <- mean(apply(axtuals_preds, 1, min) / apply(axtuals_preds,$
