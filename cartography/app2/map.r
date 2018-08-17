@@ -5,8 +5,9 @@ map <- addTiles(map)
 map <- setView(map, lng = -80.098171,
                lat = 26.372827,
                zoom = 6)
-map
 
+#print current map
+map
 
 map <- leaflet() %>% 
   addProviderTiles("Esri.WorldImagery") %>% 
