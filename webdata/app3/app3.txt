@@ -1,0 +1,103 @@
+
+R version 3.5.0 (2018-04-23) -- "Joy in Playing"
+Copyright (C) 2018 The R Foundation for Statistical Computing
+Platform: (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> thepage = readline('http://lib.stat.cmu.edu/DASL/Datafiles/Cereals.html')
+
+http://lib.stat.cmu.edu/DASL/Datafiles/Cereals.html> 
+> 
+> 
+> thepage = readline('http://lib.stat.cmu.edu/DASL/Datafiles/Cereals.html')
+http://lib.stat.cmu.edu/DASL/Datafiles/Cereals.html
+> 
+> setwd('C:\Users\xxxx\Documents\Projects\R\webdata\app3')
+Error: '\U' used without hex digits in character string starting "'C:\U"
+> setwd('C:/Users/xxxx/Documents/Projects/R/webdata/app3')
+> getwd()
+[1] "C:/Users/xxxx/Documents/Projects/R/webdata/app3"
+> install.packages(“neuralnet”)
+Error: unexpected input in "install.packages(“"
+> install.packages(neuralnet)
+Error in install.packages(neuralnet) : object 'neuralnet' not found
+> install.packages('neuralnet')
+Installing package into ‘C:/Users/xxxx/Documents/Projects/R/win-library/3.5’
+(as ‘lib’ is unspecified)
+--- Please select a CRAN mirror for use in this session ---
+Warning: failed to download mirrors file (cannot open URL 'https://cran.r-project.org/CRAN_mirrors.csv'); using local file 'C:/PROGRA~1/R/R-35~1.0/doc/CRAN_mirrors.csv'
+Warning: unable to access index for repository https://cran.revolutionanalytics.com/src/contrib:
+  cannot open URL 'https://cran.revolutionanalytics.com/src/contrib/PACKAGES'
+Warning: unable to access index for repository https://cran.revolutionanalytics.com/bin/windows/contrib/3.5:
+  cannot open URL 'https://cran.revolutionanalytics.com/bin/windows/contrib/3.5/PACKAGES'
+Warning messages:
+1: In download.file(url, destfile = f, quiet = TRUE) :
+  InternetOpenUrl failed: ''
+2: package ‘neuralnet’ is not available (for R version 3.5.0) 
+> install.packages('neuralnet')
+Installing package into ‘C:/Users/xxxx/Documents/Projects/R/win-library/3.5’
+(as ‘lib’ is unspecified)
+Warning: unable to access index for repository https://cran.revolutionanalytics.com/src/contrib:
+  cannot open URL 'https://cran.revolutionanalytics.com/src/contrib/PACKAGES'
+Warning: unable to access index for repository https://cran.revolutionanalytics.com/bin/windows/contrib/3.5:
+  cannot open URL 'https://cran.revolutionanalytics.com/bin/windows/contrib/3.5/PACKAGES'
+Warning message:
+package ‘neuralnet’ is not available (for R version 3.5.0) 
+> install.packages('neuralnet')
+Installing package into ‘C:/Users/xxxx/Documents/Projects/R/win-library/3.5’
+(as ‘lib’ is unspecified)
+trying URL 'https://cran.revolutionanalytics.com/bin/windows/contrib/3.5/neuralnet_1.33.zip'
+Content type 'application/zip' length 124997 bytes (122 KB)
+downloaded 122 KB
+
+package ‘neuralnet’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+        C:\Users\xxxx\AppData\Local\Temp\RtmpIht4MJ\downloaded_packages
+> install.packages('boot')
+Installing package into ‘C:/Users/xxxx/Documents/Projects/R/win-library/3.5’
+(as ‘lib’ is unspecified)
+trying URL 'https://cran.revolutionanalytics.com/bin/windows/contrib/3.5/boot_1.3-20.zip'
+Content type 'application/zip' length 633987 bytes (619 KB)
+downloaded 619 KB
+
+package ‘boot’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+        C:\Users\xxxx\AppData\Local\Temp\RtmpIht4MJ\downloaded_packages
+> install.packages('plyr')
+Installing package into ‘C:/Users/xxxx/Documents/Projects/R/win-library/3.5’
+(as ‘lib’ is unspecified)
+trying URL 'https://cran.revolutionanalytics.com/bin/windows/contrib/3.5/plyr_1.8.4.zip'
+Content type 'application/zip' length 1296863 bytes (1.2 MB)
+downloaded 1.2 MB
+
+package ‘plyr’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+        C:\Users\xxxx\AppData\Local\Temp\RtmpIht4MJ\downloaded_packages
+> install.packages('matrixStats')
+Installing package into ‘C:/Users/xxxx/Documents/Projects/R/win-library/3.5’
+(as ‘lib’ is unspecified)
+trying URL 'https://cran.revolutionanalytics.com/bin/windows/contrib/3.5/matrixStats_0.54.0.zip'
+Content type 'application/zip' length 1634676 bytes (1.6 MB)
+downloaded 1.6 MB
+
+package ‘matrixStats’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+        C:\Users\xxxx\AppData\Local\Temp\RtmpIht4MJ\downloaded_packages
+> 
