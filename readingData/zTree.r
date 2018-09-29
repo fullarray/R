@@ -1,4 +1,5 @@
 #make sure the current working directory is set. E.g. setwd(yourProjectDataset)
+#make sure the current working directory is set. E.g. setwd(yourProjectDataset)
 
 #store files read in a variable
 files <- lis.files(pattern = "[0-9]{6}_[0-9]{4}.xls$]", recursive=TRUE)
