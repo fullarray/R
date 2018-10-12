@@ -1,0 +1,134 @@
+---
+title: 'Hwk 2 Question 6: Part c and d'
+output: html_notebook
+---
+Student: Jonathan Herrera <br/>
+Course: Deep Learning CAP6619 <br/>
+Fall 2018
+
+```{r}
+library(pixmap)
+library(gdata)
+library(plyr)
+left1<-read.pnm(file="face/left1.pgm")
+```
+```{r}
+plot(left1)
+```
+
+```{r}
+left1.matrix<-left1@grey
+left1
+```
+```{r}
+left1.vector<-unmatrix(left1.matrix,byrow=T)
+left1.frame<-data.frame(left1.vector)
+left1.frame
+```
+
+```{r}
+dim(left1.frame)
+```
+
+```{r}
+loadImages <- function(pathName,fileNames, clasLabel) {
+files<-list.files(path=pathName,pattern=fileNames,all.files=T,full.name=T,no..=T)
+list_of_images=lapply(files,read.pnm)
+plot(list_of_images[[1]])
+n.images<-length(list_of_images)
+image.matrix<-list_of_images[[1]]@grey
+image.vector<-unmatrix(image.matrix,byrow=T)
+for(ii in 2:n.images)
+{
+ i.matrix<-list_of_images[[ii]]@grey
+ i.vector<-unmatrix(i.matrix,byrow=T)
+ image.vector<-rbind(image.vector,i.vector)
+}
+image.frame<-data.frame(image.vector)
+n.rows<-nrow(image.frame)
+class1.label<-rep(clasLabel,n.rows)
+image.frame<-cbind(image.frame,class1.label)
+return (image.frame)
+}
+```
+
+```{r}
+left.frame <- loadImages("face","left*.*",left)
+```
+Show left turn face
+
+```{r}
+left.frame$class1.label
+```
+
+```{r}
+right.frame <- loadImages("face","right*.*",right)
+```
+Show right turn face.
+```{r}
+right.frame
+```
+```{r}
+straight.frame <- loadImages("face","straight*.*",straight)
+```
+Show straight face.
+```{r}
+straight.frame$class1.label
+```
+
+```{r}
+total.frame<-rbind(left.frame,right.frame,straight.frame)
+dim(total.frame)
+```
+
+```{r}
+train.index<-sample(nrow(total.frame),nrow(total.frame)*0.6)
+training.set<-total.frame[train.index,]
+training.set
+```
+Training set
+```{r}
+test.set<-total.frame[-train.index,]
+test.set
+```
+Test set
+
+
+```{r}
+total.frame$class1.label
+left = ifelse(training.set$class1.label== 1, TRUE, FALSE)
+straight = ifelse(training.set$class1.label== 0, TRUE, FALSE)
+right = ifelse(training.set$class1.label== -1, TRUE, FALSE)
+```
+
+```{r}
+library(neuralnet)
+
+myform <- as.formula(paste('left + straight + right ~ ',paste(names(training.set[!names(training.set) %in% 'class1.label']), collapse = ' + ')))
+#setosa + versicolor + virginica ~ Sepal.Length + Sepal.Width + Petal.Length + Petal.Width
+
+face.9.3.classifier <- neuralnet(myform, training.set, hidden=9, rep=10, linear.output = TRUE, threshold = 0.1)
+summary(face.9.3.classifier)
+```
+
+```{r}
+plot(face.9.3.classifier,rep="best")
+```
+
+```{r}
+class.index<-length(test.set)
+face.prediction<-compute(face.9.3.classifier,test.set[,-class.index])
+face.prediction$net.result
+```
+For 9 hidden nodes and three output nodes
+
+```{r}
+classifications<-ifelse(face.prediction$net.result>0.5,1,ifelse(face.prediction$net.result<0,-1,0))
+#classifications <- ifelse(face.prediction$net.result > 0.5, 1,-1)
+classifications
+```
+
+```{r}
+table(test.set[,class.index],classifications)
+```
+
