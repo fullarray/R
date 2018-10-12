@@ -1,0 +1,53 @@
+---
+title: "Hwk2: Question 5"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+library(neuralnet)
+train<-read.table("nine.instances.txt",sep=",",header=T)
+train
+```
+```{r}
+plot(train$X1,train$X2,col=c("black","red")[train$Label+1],xlim=c(-2,2),ylim=c(-2,2))
+```
+
+```{r}
+net<-neuralnet(Label~X1+X2,train,hidden=2,rep=5)
+net
+```
+
+```{r}
+plot(net,rep="best")
+```
+
+```{r}
+findinterceptslope<-function(w)
+{
+slope<-w[2]/w[3]*(-1)
+intercept<-w[1]/w[3]*(-1)
+rvector<-c(intercept,slope)
+return(rvector)
+}
+#w1<-c(2.62209,-6.80459,-6.46046)
+w1<-c(-4.99767,-13.76216,-6.97)
+line1<-findinterceptslope(w1)
+line1
+```
+
+```{r}
+w2<-c(5.98809,-7.16213,-0.00158)
+line2<-findinterceptslope(w2)
+line2
+```
+
+```{r}
+plot(train$X1,train$X2,col=c("black","red")[train$Label+1],xlim=c(-2,2),ylim=c(-2,2),main="Decision surfaces of all hidden nodes")
+abline(line1[1],line1[2],col="green",lty=2)
+abline(line2[1],line2[2],col="blue",lty=2)
+```
+End of answer 5
