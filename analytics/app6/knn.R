@@ -1,3 +1,6 @@
+#Author: fullarray
+#"Profit has a thousand parents, bankruptcy is an orphan"
+
 #transfer symbolic value to continuous value
 train_data$protocol_type <- as.numeric(train_data$protocol_type)
 train_data$service <- as.numeric(train_data$service)
