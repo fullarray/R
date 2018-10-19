@@ -1,4 +1,5 @@
-"Profit has a thousand parents, bankruptcy is an orphan"
+#Author: fullarray
+#"Profit has a thousand parents, bankruptcy is an orphan"
 
 #Read data from file
 train <- read.csv("kddcup.data_10_percent_corrected")
