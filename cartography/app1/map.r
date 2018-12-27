@@ -16,7 +16,7 @@ map <- leaflet() %>%
              options = markerOptions(draggable = TRUE, riseOnHover = TRUE)) %>% 
   addCircleMarkers(lng = -123.261,
                    lat = 49.273, 
-                   popup = "You aren't here.",
+                   popup = "You are not here.",
                    fillColor= "red", opacity = 1,
                    options = markerOptions(draggable = FALSE, title = "Whoops")) %>% 
   setView(lng = -80.098171,
