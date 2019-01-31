@@ -7,7 +7,7 @@ R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
 Type 'license()' or 'licence()' for distribution details.
 
-  Natural language support but running in an English locale
+Natural language support but running in an English locale
 
 R is a collaborative project with many contributors.
 Type 'contributors()' for more information and
@@ -18,7 +18,6 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 Type 'q()' to quit R.
 
 > logitMod <- glm(Y ~ X1 + X2, family="binomial", data = training
-+ 
 + -
 + l
 + ;
@@ -39,7 +38,7 @@ downloaded 1009 KB
 package ‘mlbench’ successfully unpacked and MD5 sums checked
 
 The downloaded binary packages are in
-        C:\Users\swb\AppData\Local\Temp\RtmpMXDUgl\downloaded_packages
+        C:\Users\xxxx\AppData\Local\Temp\RtmpMXDUgl\downloaded_packages
 > data(BreastCancer, package="mlbench")
 > bc <- BreastCancer[complete.cases(BreastCancer), ]
 > data
@@ -1754,7 +1753,7 @@ package ‘recipes’ successfully unpacked and MD5 sums checked
 package ‘caret’ successfully unpacked and MD5 sums checked
 
 The downloaded binary packages are in
-        C:\Users\swb\AppData\Local\Temp\RtmpMXDUgl\downloaded_packages
+        C:\Users\xxxxx\AppData\Local\Temp\RtmpMXDUgl\downloaded_packages
 > '%ni%' <- Negate('%in%')
 > options(scipen=999)
 > 
