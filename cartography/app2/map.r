@@ -6,7 +6,7 @@ map <- setView(map, lng = -80.098171,
                lat = 26.372827,
                zoom = 6)
 
-#print current maps
+#print current mapss
 map
 
 map <- leaflet() %>% 
